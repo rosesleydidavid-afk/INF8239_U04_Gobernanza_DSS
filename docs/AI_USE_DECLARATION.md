@@ -21,10 +21,10 @@ Marcar solo lo que se hizo de verdad:
 - [x] Ejecuté en mi computadora `uv sync --frozen`, `uv run pytest -q` (13 pruebas aprobadas), `scripts/lab11_impact.py`, `scripts/lab12_audit.py` con los dos modelos, `scripts/lab12_intervals.py` y `scripts/validate_lab12_decision.py`.
 - [x] Leí los borradores de propósito, interesados, riesgos y decisión, y estoy de acuerdo con ellos.
 - [x] Guardé el trabajo en 6 commits y lo subí a GitHub con las etiquetas `u04-lab12` y `u04-e07`.
-- [ ] Puedo explicar por qué un recall global aceptable puede esconder un recall bajo en un grupo.
-- [ ] Puedo explicar qué es un intervalo de confianza de Wilson y por qué los intervalos de G1 y G2 se solapan.
-- [ ] Puedo explicar la diferencia entre obligación legal, marco voluntario y recomendación ética en este caso.
-- [ ] Puedo explicar por qué la decisión es REVIEW aunque las puertas automáticas puedan dar GO.
+- [x] Puedo explicar por qué un recall global aceptable puede esconder un recall bajo en un grupo.
+- [x] Puedo explicar qué es un intervalo de confianza de Wilson y por qué los intervalos de G1 y G2 se solapan.
+- [x] Puedo explicar la diferencia entre obligación legal, marco voluntario y recomendación ética en este caso.
+- [x] Puedo explicar por qué la decisión es REVIEW aunque las puertas automáticas puedan dar GO.
 
 Verificaciones hechas por la IA: ejecutó el proyecto base, sus pruebas y mis scripts en su propio entorno antes de dármelos, y comprobó que sus cifras coincidieran con las de mi corrida. Verificó el texto de la Ley 172-13 en una republicación del texto legal (no en la Gaceta Oficial).
 
