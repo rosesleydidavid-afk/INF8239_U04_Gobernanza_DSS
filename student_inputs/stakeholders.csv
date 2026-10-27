@@ -1,5 +1,5 @@
 stakeholder,benefit,harm,power,participation
-Affected person,REPLACE,REPLACE,low,REPLACE
-Operator,REPLACE,REPLACE,medium,REPLACE
-Institutional owner,REPLACE,REPLACE,high,REPLACE
-Data team,REPLACE,REPLACE,medium,REPLACE
+Affected person,"Que su caso se revise a tiempo si de verdad es urgente.","Que su caso quede al final de la fila por error, o que lo traten distinto por su zona o su grupo.",low,"Puede pedir revisión humana, y sus representantes son consultados cuando se evalúa el sistema."
+Operator,"Una fila ordenada que le ahorra tiempo al revisar.","Confiar de más en el puntaje y dejar de mirar los casos con criterio propio, o cargar con la culpa de errores del sistema.",medium,"Participa en las pruebas y puede anular la recomendación del modelo."
+Institutional owner,"Usa mejor el tiempo y los recursos del equipo de revisión.","Responde ante quejas o daños, y su reputación sufre si el sistema trata desigual.",high,"Aprueba el uso, revisa los resultados cada cierto tiempo y puede detener el sistema."
+Data team,"Un sistema que se puede probar, explicar y mejorar.","Que haya sesgos en los datos que no se vean y se atribuyan al equipo.",medium,"Documenta los datos y el modelo, y avisa de sus límites."

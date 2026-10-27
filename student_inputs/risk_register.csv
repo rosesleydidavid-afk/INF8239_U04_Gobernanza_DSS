@@ -1,9 +1,9 @@
 id,scenario,affected,likelihood_1_4,impact_1_4,control,owner,evidence,residual
-R01,REPLACE,REPLACE,2,4,REPLACE,REPLACE,REPLACE,high
-R02,REPLACE,REPLACE,3,3,REPLACE,REPLACE,REPLACE,medium
-R03,REPLACE,REPLACE,2,3,REPLACE,REPLACE,REPLACE,medium
-R04,REPLACE,REPLACE,1,4,REPLACE,REPLACE,REPLACE,medium
-R05,REPLACE,REPLACE,2,2,REPLACE,REPLACE,REPLACE,low
-R06,REPLACE,REPLACE,3,2,REPLACE,REPLACE,REPLACE,medium
-R07,REPLACE,REPLACE,2,4,REPLACE,REPLACE,REPLACE,high
-R08,REPLACE,REPLACE,1,3,REPLACE,REPLACE,REPLACE,low
+R01,"Un caso urgente queda al final de la fila porque el modelo lo subestima (falso negativo) y se atiende tarde.","Persona afectada",2,4,"Una persona revisa cada semana una muestra de casos de baja prioridad, y existe un mínimo de recall de 0.68.","Institutional Owner","Recall por grupo en reports/lab12 y registro semanal de la muestra revisada.",high
+R02,"El sistema falla más con un grupo que con otro (más falsos positivos o menos recall en G1 que en G2, o al revés).","Grupos G1 y G2",3,3,"Auditoría por grupo en cada versión y compuerta de brecha máxima de 0.16 en recall y en falsos positivos.","Data Scientist","reports/lab12/*/fairness_by_group.csv y reports/lab13/deployment_decision.json.",medium
+R03,"Los datos cambian con el tiempo y el modelo entrenado deja de servir sin que nadie lo note.","Personas afectadas y operadores",2,3,"Evaluación con corte temporal, revisión periódica de las métricas y reentrenamiento solo con aprobación.","ML Engineer","Corte temporal documentado (scripts/describe_dataset.py) y reporte de monitoreo.",medium
+R04,"Alguien usa el sistema para algo prohibido, como decidir elegibilidad o activar una intervención automática.","Persona afectada",1,4,"Los usos prohibidos están escritos en la configuración y en la Model Card, y la salida exige una acción humana.","Institutional Owner","configs/governance.yml y docs/MODEL_CARD.md.",medium
+R05,"Entra al sistema una columna prohibida, como un nombre o un documento, o un dato mal formado.","Personas cuyos datos se procesan",2,2,"La validación del esquema rechaza columnas con identificadores directos y valores fuera del contrato.","Data Engineer","tests/test_privacy.py y tests/test_data.py.",low
+R06,"El operador confía de más en el puntaje y deja de revisar con criterio propio.","Persona afectada y operador",3,2,"La pantalla muestra los límites del sistema y pide registrar la decisión humana, y el operador puede anular el resultado.","Product Owner","Aviso y acción humana en app.py, y registro de decisiones.",medium
+R07,"Una persona afectada no tiene una vía real para cuestionar la recomendación y queda sin recurso.","Persona afectada",2,4,"Mecanismo de apelación por escrito, con revisión de alguien distinto al operador original y plazo publicado.","Institutional Owner","appeal_mechanism en student_inputs/lab11_impact.yml y registro de apelaciones.",high
+R08,"Los datos sintéticos de laboratorio se confunden con estadísticas reales y se sacan conclusiones sobre territorios reales.","Comunidades y la institución",1,3,"Aviso visible de que los datos son sintéticos, en la aplicación y en la Dataset Card.","Data Scientist","docs/DATASET_CARD.md y el aviso de app.py.",low

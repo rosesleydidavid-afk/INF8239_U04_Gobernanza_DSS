@@ -1,9 +1,9 @@
-purpose: REPLACE
-assisted_decision: REPLACE
-users: REPLACE
-affected_population: REPLACE
-owner: REPLACE
-non_predictive_alternative: REPLACE
-out_of_scope_use: REPLACE
-withdrawal_condition: REPLACE
-appeal_mechanism: REPLACE
+   purpose: "Ayudar a que el equipo revisor decida en qué orden mirar los casos pendientes, para que los que parecen más urgentes se vean primero. No sirve para decidir nada sobre nadie, solo para ordenar la fila de revisión."
+   assisted_decision: "En qué orden revisa una persona los casos pendientes de un territorio. Qué hacer con cada caso lo decide siempre una persona."
+   users: "El personal que revisa casos en la oficina territorial, bajo la supervisión de quien coordina esa oficina."
+   affected_population: "Las personas y comunidades de las zonas cuyos casos se revisan, en especial quienes viven en zonas con menos datos y los grupos G1 y G2, que el sistema podría tratar de forma desigual. En este laboratorio los datos son sintéticos y no representan personas reales."
+   owner: "El responsable institucional del sistema, que responde por su uso y tiene autoridad para detenerlo."
+   non_predictive_alternative: "Revisar los casos por orden de llegada, o con una lista corta de criterios escrita por el equipo (por ejemplo, incidentes previos y estado de la infraestructura) sin usar un modelo. Es la opción de comparación: si el modelo no mejora claramente esto, no vale la pena usarlo."
+   out_of_scope_use: "Decidir ayudas o elegibilidad, declarar emergencias, intervenir de forma automática, o evaluar y perfilar a personas concretas. Tampoco usarlo con datos reales o en otro contexto sin hacer una nueva evaluación de impacto."
+   withdrawal_condition: "Se detiene y se revisa si la sensibilidad (recall) baja de 0.68, si la brecha de recall o de falsos positivos entre grupos pasa de 0.16, si llega una queja fundada de trato desigual, o si cambian los datos o el uso previsto."
+   appeal_mechanism: "Cualquier persona afectada o su representante puede pedir por escrito que una persona revise su caso sin usar la recomendación del modelo. La revisión la hace alguien distinto al operador original, se responde en un plazo que el responsable fije y publique, y queda registrada."
