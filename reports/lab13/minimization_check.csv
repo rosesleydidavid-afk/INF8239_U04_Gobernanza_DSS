@@ -1,0 +1,3 @@
+variant,features,accuracy,recall,recall_gap,fpr_gap
+con_age_band,"zone, age_band, previous_incidents, infrastructure_score, exposure",0.7188,0.7174,0.1376,0.125
+sin_age_band,"zone, previous_incidents, infrastructure_score, exposure",0.725,0.7174,0.1376,0.1442
