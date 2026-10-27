@@ -38,3 +38,23 @@ Las del campo `withdrawal_condition` de `student_inputs/lab11_impact.yml`.
 
 ## Qué no permite concluir
 Este registro no demuestra que el sistema sea justo ni injusto. Solo documenta riesgos y controles antes de medir.
+
+---
+
+## Actualización tras LAB12 (27 de octubre de 2026)
+**Decisión del Ejercicio 07: LIMITAR (se mantiene REVIEW).** Usar el modelo logístico, no el árbol, solo para ordenar la revisión con una persona decidiendo. No desplegar para uso real.
+
+**Evidencia medida** (160 casos de prueba con corte temporal; `reports/lab12/` y `reports/lab12/confidence_intervals.csv`):
+
+- Modelo logístico: exactitud 0.719, recall global 0.717. Recall G1 0.653 y G2 0.791 (brecha 0.138). Falsos positivos G1 0.250 y G2 0.375 (brecha 0.125).
+- Árbol de decisión: brecha de recall 0.181 y de falsos positivos 0.168, ambas por encima del límite de 0.16.
+- Intervalos de confianza del 95 % (Wilson): recall de G1 de 0.513 a 0.771 y de G2 de 0.648 a 0.886. Se solapan.
+
+**Por qué se mantiene REVIEW aunque el modelo logístico pase las puertas de brecha:**
+
+1. El recall de G1 (0.653) queda por debajo del mínimo de 0.68 aunque el recall global (0.717) lo cumple.
+2. G2 tiene solo 16 casos negativos; las brechas pueden ser azar y no se puede afirmar ni descartar un trato desigual.
+3. Varios grupos interseccionales tienen menos de 10 casos y no se interpretan.
+4. Los datos son sintéticos.
+
+**Qué se necesita para pasar a GO:** más casos de ambos grupos, sobre todo negativos de G2, y repetir la auditoría con intervalos que ya no se solapen o con una brecha claramente dentro de la tolerancia; además de la revisión del responsable institucional.
