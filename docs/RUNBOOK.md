@@ -1,8 +1,10 @@
-# Incident Runbook — complete after LAB13
+# Incident Runbook — Territorial Review DSS (Synthetic)
 
-1. Detection and classification: REPLACE
-2. Containment authority: REPLACE
-3. Evidence preservation: REPLACE
-4. Internal and affected-party communication: REPLACE
-5. Rollback or safe baseline: REPLACE
-6. Postmortem, owner and due date: REPLACE
+Un incidente es cualquier señal de que el sistema puede estar causando daño o incumpliendo sus reglas: una compuerta deja de cumplirse, aparecen identificadores directos, hay uso prohibido, o una persona afectada reporta un problema.
+
+1. Detection and classification: Se detecta al correr `scripts/lab13_governance.py` (compuertas de `configs/governance.yml`), por revisión de los reportes por grupo, o por un reporte de un operador o de una persona afectada. Se clasifica así: **Bajo** (una compuerta cerca del límite, sin daño); **Medio** (falla una compuerta, p. ej. la brecha de recall supera 0.16); **Alto** (identificadores directos en los datos, uso prohibido, o una decisión automática sin revisión humana). Responsable de detectar: ML Engineer. Responsable de clasificar: Product Owner.
+2. Containment authority: La Institutional Owner (Accountable en "Incident response") puede suspender el sistema. El ML Engineer ejecuta la contención. Ante incidente Medio o Alto, el estado pasa a REVIEW o STOP y se deja de usar la priorización del modelo.
+3. Evidence preservation: Antes de cambiar nada, se guardan `reports/lab13/deployment_decision.json`, `fairness_by_group.csv`, la versión del modelo, la configuración (`configs/governance.yml`), el commit de Git y la etiqueta correspondiente. No se borra ni se sobrescribe ninguna evidencia. Responsable: ML Engineer.
+4. Internal and affected-party communication: Se informa a la Institutional Owner y al equipo (Data Scientist, Data Engineer, Legal) con un resumen de qué pasó, qué casos pudieron verse afectados y qué se hizo. Se informa a los representantes de las personas afectadas con lenguaje claro, sin datos personales, y se les ofrece revisión humana de sus casos (ver apelación en el Model Card). Responsable de redactar: Product Owner. Consultado: Legal.
+5. Rollback or safe baseline: El estado seguro es la revisión humana sin priorización del modelo (orden por fecha de recepción). Si hay una versión anterior del modelo que cumple todas las compuertas, se puede volver a ella (etiqueta anterior de Git). El sistema no vuelve a GO hasta que se repitan las pruebas y cumpla las compuertas.
+6. Postmortem, owner and due date: Se redacta un postmortem (`reports/lab13/INCIDENT_POSTMORTEM.md`) con causa, impacto, acciones correctivas, responsables y fechas. Responsable de redactarlo: Product Owner. Responsable final (Accountable): Institutional Owner. Plazo propuesto: 5 días hábiles tras cerrar el incidente.
